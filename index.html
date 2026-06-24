@@ -15,26 +15,34 @@
             --gold-primary: #D4AF37;
             --gold-dark: #998100;
             --text-glow: 0 0 15px rgba(212, 175, 55, 0.6), 0 0 25px rgba(212, 175, 55, 0.3);
-            --glass-bg: rgba(20, 20, 20, 0.55);
-            --glass-border: rgba(212, 175, 55, 0.35);
-            --glass-glow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+            --glass-bg: rgba(15, 15, 15, 0.65);
+            --glass-border: rgba(212, 175, 55, 0.25);
+            --glass-glow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            /* Hide default cursor for magical effect */
+            cursor: none !important; 
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #050505;
+            background-color: #030303;
             color: white;
-            /* Cinematic Film Background */
+            
+            /* Premium Cinematic Film & Editing Timeline Background */
             background-image: 
-                linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(212, 175, 55, 0.15) 50%, rgba(0,0,0,0.9) 100%),
-                url('https://images.unsplash.com/photo-1620336655055-088d06e36bf0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
+                /* Subtle Editing Grid Lines */
+                linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+                /* Dark Vignette Overlay */
+                radial-gradient(circle at center, rgba(15, 15, 15, 0.85) 0%, rgba(2, 2, 2, 1) 100%),
+                /* Raw Cinematic Texture */
+                url('https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1920&q=80');
+            background-size: 60px 60px, 60px 60px, cover, cover;
             background-position: center;
             background-attachment: fixed;
             overflow-x: hidden;
@@ -47,8 +55,35 @@
             top: 0; left: 0; width: 100%; height: 100%;
             pointer-events: none;
             z-index: 999;
-            opacity: 0.04;
+            opacity: 0.06;
             background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png');
+        }
+
+        /* --- MAGICAL MOUSE CURSOR --- */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--gold-light);
+            box-shadow: 0 0 15px var(--gold-light), 0 0 30px var(--gold-primary);
+            border-radius: 50%;
+            position: fixed;
+            top: 0; left: 0;
+            transform: translate(-50%, -50%);
+            z-index: 10000;
+            pointer-events: none;
+        }
+        .cursor-trail {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--gold-primary);
+            box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.2), 0 0 15px rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            position: fixed;
+            top: 0; left: 0;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            pointer-events: none;
+            transition: width 0.2s, height 0.2s;
         }
 
         /* --- NAVIGATION --- */
@@ -57,9 +92,9 @@
             top: 0; width: 100%;
             display: flex; justify-content: space-between; align-items: center;
             padding: 20px 8%;
-            background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--glass-border);
             z-index: 100;
         }
@@ -83,59 +118,72 @@
             display: flex; flex-direction: column;
             justify-content: center; align-items: center;
             text-align: center; padding: 20px;
+            position: relative;
         }
+        /* Top and Bottom Cinematic Black Bars */
+        .hero::before, .hero::after {
+            content: '';
+            position: absolute;
+            left: 0; width: 100%; height: 8vh;
+            background: #000;
+            z-index: 10;
+        }
+        .hero::before { top: 0; }
+        .hero::after { bottom: 0; }
+
         .hero h1 {
             font-family: 'Cinzel', serif;
-            font-size: 5rem;
+            font-size: 5.5rem;
             color: var(--gold-light);
             text-shadow: var(--text-glow);
-            letter-spacing: 5px;
+            letter-spacing: 8px;
             text-transform: uppercase;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            z-index: 20;
         }
         .hero p {
             max-width: 800px;
-            font-size: 1.2rem;
-            color: #ccc;
-            letter-spacing: 2px;
-            line-height: 1.6;
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            letter-spacing: 3px;
+            line-height: 1.8;
             text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(0,0,0,0.8);
+            text-shadow: 0 0 15px rgba(0,0,0,1);
+            z-index: 20;
         }
         .btn {
             display: inline-block;
-            margin-top: 35px;
-            padding: 15px 35px;
-            border-radius: 5px;
+            margin-top: 40px;
+            padding: 15px 40px;
+            border-radius: 3px; /* Boxier for a pro editing feel */
             background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
             color: black;
             text-decoration: none;
             font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             transition: 0.4s;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-            position: relative;
-            z-index: 10;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            z-index: 20;
         }
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 25px var(--gold-light);
+            transform: scale(1.05);
+            box-shadow: 0 0 30px var(--gold-light);
             background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
         }
 
         /* --- GENERAL SECTIONS --- */
         .section {
-            padding: 100px 8%;
+            padding: 120px 8%;
         }
         h2 {
             font-family: 'Cinzel', serif;
             color: var(--gold-primary);
-            font-size: 2.8rem;
-            margin-bottom: 40px;
+            font-size: 3rem;
+            margin-bottom: 50px;
             text-align: center;
             text-shadow: var(--text-glow);
-            letter-spacing: 3px;
+            letter-spacing: 4px;
         }
 
         /* --- APPLE GLASS ABOUT SECTION --- */
@@ -143,90 +191,91 @@
             max-width: 900px;
             margin: 0 auto;
             background: var(--glass-bg);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(35px);
+            -webkit-backdrop-filter: blur(35px);
             border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 40px;
+            border-radius: 10px; /* Sharper professional corners */
+            padding: 50px;
             box-shadow: var(--glass-glow);
             text-align: center;
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: #f0f0f0;
+            font-size: 1.25rem;
+            line-height: 1.9;
+            color: #e8e8e8;
+            font-weight: 300;
         }
 
         /* --- VIDEO PORTFOLIO GRID --- */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
             max-width: 1400px;
             margin: 0 auto;
         }
 
         .card {
             background: var(--glass-bg);
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(25px);
             border: 1px solid var(--glass-border);
-            border-radius: 15px;
+            border-radius: 8px;
             overflow: hidden;
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: var(--glass-glow);
             position: relative;
         }
         .card:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-12px) scale(1.03);
             border-color: var(--gold-light);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.4);
         }
         .card iframe {
             display: block;
-            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.15);
         }
         .card-content {
-            padding: 20px;
+            padding: 25px;
             text-align: center;
         }
         .card-content h3 {
             font-family: 'Cinzel', serif;
             color: var(--gold-light);
-            letter-spacing: 1px;
-            font-size: 1.2rem;
+            letter-spacing: 2px;
+            font-size: 1.3rem;
+            text-shadow: var(--text-glow);
         }
 
         /* --- CONTACT BANNERS (EMAIL & IG) --- */
         .contact-section {
-            padding: 60px 8% 100px;
+            padding: 60px 8% 120px;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 40px;
+            gap: 50px;
         }
         .banner-btn {
             background: var(--glass-bg);
-            backdrop-filter: blur(30px);
+            backdrop-filter: blur(40px);
             border: 1px solid var(--glass-border);
-            padding: 25px 50px;
-            border-radius: 15px;
+            padding: 30px 60px;
+            border-radius: 8px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            cursor: pointer;
             box-shadow: var(--glass-glow);
             
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             color: var(--gold-light);
             font-family: 'Cinzel', serif;
-            font-weight: 700;
-            letter-spacing: 2px;
+            font-weight: 900;
+            letter-spacing: 3px;
             text-shadow: var(--text-glow);
         }
         .banner-btn:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 0 35px rgba(212, 175, 55, 0.5);
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 0 45px rgba(212, 175, 55, 0.6);
             border-color: var(--gold-light);
-            background: rgba(212, 175, 55, 0.15);
+            background: rgba(212, 175, 55, 0.2);
         }
 
         /* Surprise Animation on Click */
@@ -235,23 +284,27 @@
         }
         @keyframes cinematic-pop {
             0% { transform: scale(1); box-shadow: 0 0 0 rgba(212, 175, 55, 0); }
-            40% { transform: scale(1.15) rotate(2deg); box-shadow: 0 0 60px rgba(212, 175, 55, 1); background: rgba(212, 175, 55, 0.4); color: #fff;}
+            40% { transform: scale(1.15) rotate(2deg); box-shadow: 0 0 80px rgba(212, 175, 55, 1); background: rgba(212, 175, 55, 0.5); color: #fff;}
             70% { transform: scale(0.95) rotate(-2deg); }
-            100% { transform: scale(1) rotate(0deg); box-shadow: 0 0 30px rgba(212, 175, 55, 0.7); }
+            100% { transform: scale(1) rotate(0deg); box-shadow: 0 0 40px rgba(212, 175, 55, 0.8); }
         }
 
         footer {
-            padding: 40px;
+            padding: 50px;
             text-align: center;
-            border-top: 1px solid var(--glass-border);
-            background: rgba(0,0,0,0.8);
-            color: #aaa;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            background: rgba(0,0,0,0.95);
+            color: #777;
+            font-size: 1rem;
+            letter-spacing: 2px;
         }
     </style>
 </head>
 <body>
+
+    <!-- MAGICAL CURSOR ELEMENTS -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-trail"></div>
 
     <nav>
         <div class="logo">ROUNAK EDITS</div>
@@ -260,12 +313,12 @@
 
     <section class="hero">
         <h1>Rounak Edits</h1>
-        <p>Professional Video Editor • Reels • Commercial Ads • Documentary Style Editing • Motion Graphics</p>
-        <a class="btn" href="#portfolio">View Portfolio</a>
+        <p>Premium Cinematic Editing • Commercials • Motion Graphics</p>
+        <a class="btn" href="#portfolio">Enter Archive</a>
     </section>
 
     <section class="section">
-        <h2>About Me</h2>
+        <h2>The Editor</h2>
         <div class="glass">
             <p>
                 Hi, I'm Rounak. I help creators and brands turn raw footage into cinematic stories. 
@@ -361,7 +414,7 @@
         </div>
     </section>
 
-    <!-- NEW: BANNERS FOR EMAIL AND INSTAGRAM -->
+    <!-- BANNERS FOR EMAIL AND INSTAGRAM -->
     <section class="contact-section">
         <!-- Update the mailto email address here -->
         <a href="mailto:rounakeditzz@gmail.com" class="banner-btn" onclick="triggerSurprise(event, this)">
@@ -378,8 +431,43 @@
         <p>© 2026 Rounak Edits. All Rights Reserved.</p>
     </footer>
 
-    <!-- SURPRISE ANIMATION SCRIPT -->
+    <!-- SURPRISE ANIMATION & CURSOR SCRIPT -->
     <script>
+        // Magic Cursor Logic
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorTrail = document.querySelector('.cursor-trail');
+
+        window.addEventListener('mousemove', function(e) {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            // Instant dot movement
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            // Trailing effect for the ring
+            cursorTrail.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 600, fill: "forwards" });
+        });
+
+        // Hover effect to enlarge the cursor on links/buttons
+        const interactables = document.querySelectorAll('a, .card, .banner-btn');
+        interactables.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorTrail.style.width = '60px';
+                cursorTrail.style.height = '60px';
+                cursorTrail.style.backgroundColor = 'rgba(212, 175, 55, 0.1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorTrail.style.width = '40px';
+                cursorTrail.style.height = '40px';
+                cursorTrail.style.backgroundColor = 'transparent';
+            });
+        });
+
+        // Surprise Click Logic
         function triggerSurprise(event, element) {
             event.preventDefault(); // Pause the click
             element.classList.remove('surprise-click'); // Reset animation
