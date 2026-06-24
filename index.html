@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rounak Edits | Premium Video Portfolio</title>
     
+    <!-- Premium Cinematic Typography -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
@@ -119,7 +120,6 @@
             text-align: center; padding: 20px;
             position: relative;
         }
-        /* Top and Bottom Cinematic Black Bars */
         .hero::before, .hero::after {
             content: '';
             position: absolute;
@@ -154,7 +154,7 @@
             display: inline-block;
             margin-top: 40px;
             padding: 15px 40px;
-            border-radius: 3px;
+            border-radius: 3px; 
             background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
             color: black;
             text-decoration: none;
@@ -193,7 +193,7 @@
             backdrop-filter: blur(35px);
             -webkit-backdrop-filter: blur(35px);
             border: 1px solid var(--glass-border);
-            border-radius: 10px;
+            border-radius: 10px; 
             padding: 50px;
             box-shadow: var(--glass-glow);
             text-align: center;
@@ -203,7 +203,7 @@
             font-weight: 300;
         }
 
-        /* --- VIDEO PORTFOLIO GRID --- */
+        /* --- CLICKABLE VIDEO PORTFOLIO CARDS --- */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -212,6 +212,7 @@
             margin: 0 auto;
         }
 
+        /* Card is now a clickable link block */
         .card {
             background: var(--glass-bg);
             backdrop-filter: blur(25px);
@@ -221,16 +222,28 @@
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: var(--glass-glow);
             position: relative;
+            display: block;
+            text-decoration: none;
         }
         .card:hover {
             transform: translateY(-12px) scale(1.03);
             border-color: var(--gold-light);
             box-shadow: 0 15px 50px rgba(212, 175, 55, 0.4);
         }
-        .card iframe {
-            display: block;
+        
+        /* New Image Thumbnail CSS */
+        .video-thumbnail {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
             border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+            display: block;
+            transition: 0.5s;
         }
+        .card:hover .video-thumbnail {
+            filter: brightness(1.2) contrast(1.1);
+        }
+
         .card-content {
             padding: 25px;
             text-align: center;
@@ -243,7 +256,7 @@
             text-shadow: var(--text-glow);
         }
 
-        /* --- CONTACT BANNERS (EMAIL, IG, YOUTUBE) --- */
+        /* --- CONTACT BANNERS --- */
         .contact-section {
             padding: 60px 8% 120px;
             display: flex;
@@ -255,7 +268,7 @@
             background: var(--glass-bg);
             backdrop-filter: blur(40px);
             border: 1px solid var(--glass-border);
-            padding: 30px 50px; /* Slightly adjusted padding to fit 3 neatly */
+            padding: 30px 50px; 
             border-radius: 8px;
             text-align: center;
             text-decoration: none;
@@ -301,6 +314,7 @@
 </head>
 <body>
 
+    <!-- MAGICAL CURSOR ELEMENTS -->
     <div class="cursor-dot"></div>
     <div class="cursor-trail"></div>
 
@@ -329,79 +343,90 @@
         <h2>Portfolio Showcase</h2>
         <div class="grid">
             
-            <div class="card">
-                <iframe width="100%" height="220" src="https://youtu.be/A-pzgnHXItc?si=nJVpfV1M_NDb0_v7" frameborder="0" allowfullscreen></iframe>
+            <!-- Video 1 -->
+            <a href="YOUR_YOUTUBE_VIDEO_LINK_HERE" target="_blank" class="card" onclick="triggerSurprise(event, this)">
+                <img src="https://images.unsplash.com/photo-1578632292335-df3fbc186831?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail" class="video-thumbnail">
                 <div class="card-content">
                     <h3>Project Title 1</h3>
                 </div>
-            </div>
+            </a>
 
-            <div class="card">
-                <iframe width="100%" height="220" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+            <!-- Video 2 -->
+            <a href="YOUR_YOUTUBE_VIDEO_LINK_HERE" target="_blank" class="card" onclick="triggerSurprise(event, this)">
+                <img src="https://images.unsplash.com/photo-1578632292335-df3fbc186831?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail" class="video-thumbnail">
                 <div class="card-content">
                     <h3>Project Title 2</h3>
                 </div>
-            </div>
+            </a>
 
-            <div class="card">
-                <iframe width="100%" height="220" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
+            <!-- Video 3 -->
+            <a href="YOUR_YOUTUBE_VIDEO_LINK_HERE" target="_blank" class="card" onclick="triggerSurprise(event, this)">
+                <img src="https://images.unsplash.com/photo-1578632292335-df3fbc186831?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail" class="video-thumbnail">
                 <div class="card-content">
                     <h3>Project Title 3</h3>
                 </div>
-            </div>
+            </a>
 
-            <div class="card">
-                <iframe width="100%" height="220" src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
+            <!-- Video 4 -->
+            <a href="YOUR_YOUTUBE_VIDEO_LINK_HERE" target="_blank" class="card" onclick="triggerSurprise(event, this)">
+                <img src="https://images.unsplash.com/photo-1578632292335-df3fbc186831?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail" class="video-thumbnail">
                 <div class="card-content">
                     <h3>Project Title 4</h3>
                 </div>
-            </div>
+            </a>
 
-            <div class="card">
-                <iframe width="100%" height="220" src="https://www.youtube.com/embed/VIDEO_ID_5" frameborder="0" allowfullscreen></iframe>
+            <!-- Video 5 -->
+            <a href="YOUR_YOUTUBE_VIDEO_LINK_HERE" target="_blank" class="card" onclick="triggerSurprise(event, this)">
+                <img src="https://images.unsplash.com/photo-1578632292335-df3fbc186831?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail" class="video-thumbnail">
                 <div class="card-content">
                     <h3>Project Title 5</h3>
                 </div>
-            </div>
+            </a>
 
-            <div class="card">
-                <iframe width="100%" height="220" src="https://www.youtube.com/embed/VIDEO_ID_6" frameborder="0" allowfullscreen></iframe>
+            <!-- Video 6 -->
+            <a href="YOUR_YOUTUBE_VIDEO_LINK_HERE" target="_blank" class="card" onclick="triggerSurprise(event, this)">
+                <img src="https://images.unsplash.com/photo-1578632292335-df3fbc186831?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail" class="video-thumbnail">
                 <div class="card-content">
                     <h3>Project Title 6</h3>
                 </div>
-            </div>
+            </a>
 
-            <div class="card">
-                <iframe width="100%" height="220" src="https://www.youtube.com/embed/VIDEO_ID_7" frameborder="0" allowfullscreen></iframe>
+            <!-- Video 7 -->
+            <a href="YOUR_YOUTUBE_VIDEO_LINK_HERE" target="_blank" class="card" onclick="triggerSurprise(event, this)">
+                <img src="https://images.unsplash.com/photo-1578632292335-df3fbc186831?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail" class="video-thumbnail">
                 <div class="card-content">
                     <h3>Project Title 7</h3>
                 </div>
-            </div>
+            </a>
 
-            <div class="card">
-                <iframe width="100%" height="220" src="https://www.youtube.com/embed/VIDEO_ID_8" frameborder="0" allowfullscreen></iframe>
+            <!-- Video 8 -->
+            <a href="YOUR_YOUTUBE_VIDEO_LINK_HERE" target="_blank" class="card" onclick="triggerSurprise(event, this)">
+                <img src="https://images.unsplash.com/photo-1578632292335-df3fbc186831?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail" class="video-thumbnail">
                 <div class="card-content">
                     <h3>Project Title 8</h3>
                 </div>
-            </div>
+            </a>
 
-            <div class="card">
-                <iframe width="100%" height="220" src="https://www.youtube.com/embed/VIDEO_ID_9" frameborder="0" allowfullscreen></iframe>
+            <!-- Video 9 -->
+            <a href="YOUR_YOUTUBE_VIDEO_LINK_HERE" target="_blank" class="card" onclick="triggerSurprise(event, this)">
+                <img src="https://images.unsplash.com/photo-1578632292335-df3fbc186831?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail" class="video-thumbnail">
                 <div class="card-content">
                     <h3>Project Title 9</h3>
                 </div>
-            </div>
+            </a>
 
-            <div class="card">
-                <iframe width="100%" height="220" src="https://www.youtube.com/embed/VIDEO_ID_10" frameborder="0" allowfullscreen></iframe>
+            <!-- Video 10 -->
+            <a href="YOUR_YOUTUBE_VIDEO_LINK_HERE" target="_blank" class="card" onclick="triggerSurprise(event, this)">
+                <img src="https://images.unsplash.com/photo-1578632292335-df3fbc186831?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Video Thumbnail" class="video-thumbnail">
                 <div class="card-content">
                     <h3>Project Title 10</h3>
                 </div>
-            </div>
+            </a>
 
         </div>
     </section>
 
+    <!-- BANNERS FOR EMAIL, INSTAGRAM, AND YOUTUBE -->
     <section class="contact-section">
         <a href="mailto:rounakeditzz@gmail.com" class="banner-btn" onclick="triggerSurprise(event, this)">
             ✉️ EMAIL ME
@@ -420,6 +445,7 @@
         <p>© 2026 Rounak Edits. All Rights Reserved.</p>
     </footer>
 
+    <!-- SURPRISE ANIMATION & CURSOR SCRIPT -->
     <script>
         // Magic Cursor Logic
         const cursorDot = document.querySelector('.cursor-dot');
@@ -457,19 +483,25 @@
 
         // Surprise Click Logic
         function triggerSurprise(event, element) {
-            event.preventDefault(); // Pause the click
+            // Only prevent default if it's not a mailto link to ensure mail app opens smoothly
+            if (!element.href.startsWith('mailto:')) {
+                event.preventDefault(); 
+            }
+            
             element.classList.remove('surprise-click'); // Reset animation
             void element.offsetWidth; // Trigger reflow
             element.classList.add('surprise-click'); // Start animation
             
             // Wait for the animation to play before jumping to the link
-            setTimeout(() => {
-                if (element.target === "_blank") {
-                    window.open(element.href, '_blank');
-                } else {
-                    window.location.href = element.href;
-                }
-            }, 700);
+            if (!element.href.startsWith('mailto:')) {
+                setTimeout(() => {
+                    if (element.target === "_blank") {
+                        window.open(element.href, '_blank');
+                    } else {
+                        window.location.href = element.href;
+                    }
+                }, 700);
+            }
         }
     </script>
 </body>
