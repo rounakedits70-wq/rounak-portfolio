@@ -1,203 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rounak Edits</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-font-family:Arial,sans-serif;
-background:#090909;
-color:white;
-}
-nav{
-position:fixed;top:0;width:100%;
-display:flex;justify-content:space-between;
-padding:20px 8%;
-background:rgba(0,0,0,.5);
-backdrop-filter:blur(10px);
-border-bottom:1px solid rgba(255,215,0,.15);
-}
-.logo{color:#d4af37;font-size:24px;font-weight:bold}
-.hero{
-height:100vh;
-display:flex;flex-direction:column;
-justify-content:center;align-items:center;
-text-align:center;padding:20px;
-background:radial-gradient(circle at top,#2b2208,#090909 55%);
-}
-.hero h1{font-size:4rem;color:#d4af37}
-.hero p{max-width:700px;margin-top:15px;color:#ccc}
-.btn{
-display:inline-block;margin-top:25px;
-padding:12px 28px;border-radius:999px;
-background:#d4af37;color:black;
-text-decoration:none;font-weight:bold;
-}
-.section{padding:90px 8%}
-h2{color:#d4af37;margin-bottom:25px}
-.glass{
-background:rgba(255,255,255,.06);
-backdrop-filter:blur(12px);
-border:1px solid rgba(255,215,0,.15);
-border-radius:20px;
-padding:25px;
-}
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-}
-.card{
-background:#111;
-border:1px solid rgba(255,215,0,.12);
-border-radius:18px;
-overflow:hidden;
-transition:.3s;
-}
-.card:hover{transform:translateY(-6px)}
-.thumb{
-height:180px;
-background:linear-gradient(135deg,#2c2c2c,#1a1a1a);
-display:flex;align-items:center;justify-content:center;
-color:#d4af37;
-}
-.card-content{padding:18px}
-footer{
-padding:40px;text-align:center;
-border-top:1px solid rgba(255,215,0,.15);
-color:#aaa;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rounak Edits | Premium Video Portfolio</title>
+    
+    <!-- Premium Cinematic Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- PREMIUM GOLDEN FILM THEME --- */
+        :root {
+            --gold-light: #FFDF73;
+            --gold-primary: #D4AF37;
+            --gold-dark: #998100;
+            --text-glow: 0 0 15px rgba(212, 175, 55, 0.6), 0 0 25px rgba(212, 175, 55, 0.3);
+            --glass-bg: rgba(20, 20, 20, 0.55);
+            --glass-border: rgba(212, 175, 55, 0.35);
+            --glass-glow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #050505;
+            color: white;
+            /* Cinematic Film Background */
+            background-image: 
+                linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(212, 175, 55, 0.15) 50%, rgba(0,0,0,0.9) 100%),
+                url('https://images.unsplash.com/photo-1620336655055-088d06e36bf0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+
+        /* Subtle Film Grain */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 999;
+            opacity: 0.04;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Dissolve_Noise_Texture.png');
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 8%;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 100;
+        }
+        .logo {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-primary);
+            font-size: 28px;
+            font-weight: 900;
+            text-shadow: var(--text-glow);
+            letter-spacing: 2px;
+        }
+        .nav-social {
+            color: #e0e0e0;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center; padding: 20px;
+        }
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 5rem;
+            color: var(--gold-light);
+            text-shadow: var(--text-glow);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            max-width: 800px;
+            font-size: 1.2rem;
+            color: #ccc;
+            letter-spacing: 2px;
+            line-height: 1.6;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(0,0,0,0.8);
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 15px 35px;
+            border-radius: 5px;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.4s;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            position: relative;
+            z-index: 10;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px var(--gold-light);
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+        }
+
+        /* --- GENERAL SECTIONS --- */
+        .section {
+            padding: 100px 8%;
+        }
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-primary);
+            font-size: 2.8rem;
+            margin-bottom: 40px;
+            text-align: center;
+            text-shadow: var(--text-glow);
+            letter-spacing: 3px;
+        }
+
+        /* --- APPLE GLASS ABOUT SECTION --- */
+        .glass {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--glass-bg);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--glass-glow);
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #f0f0f0;
+        }
+
+        /* --- VIDEO PORTFOLIO GRID --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: var(--glass-glow);
+            position: relative;
+        }
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--gold-light);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3);
+        }
+        .card iframe {
+            display: block;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        .card-content {
+            padding: 20px;
+            text-align: center;
+        }
+        .card-content h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--gold-light);
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+        }
+
+        /* --- CONTACT BANNERS (EMAIL & IG) --- */
+        .contact-section {
+            padding: 60px 8% 100px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        .banner-btn {
+            background: var(--glass-bg);
+            backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-border);
+            padding: 25px 50px;
+            border-radius: 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            box-shadow: var(--glass-glow);
+            
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-size: 1.4rem;
+            color: var(--gold-light);
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: var(--text-glow);
+        }
+        .banner-btn:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.5);
+            border-color: var(--gold-light);
+            background: rgba(212, 175, 55, 0.15);
+        }
+
+        /* Surprise Animation on Click */
+        .surprise-click {
+            animation: cinematic-pop 0.7s cubic-bezier(0.25, 1.5, 0.5, 1) forwards;
+        }
+        @keyframes cinematic-pop {
+            0% { transform: scale(1); box-shadow: 0 0 0 rgba(212, 175, 55, 0); }
+            40% { transform: scale(1.15) rotate(2deg); box-shadow: 0 0 60px rgba(212, 175, 55, 1); background: rgba(212, 175, 55, 0.4); color: #fff;}
+            70% { transform: scale(0.95) rotate(-2deg); }
+            100% { transform: scale(1) rotate(0deg); box-shadow: 0 0 30px rgba(212, 175, 55, 0.7); }
+        }
+
+        footer {
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            background: rgba(0,0,0,0.8);
+            color: #aaa;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+    </style>
 </head>
 <body>
 
-<nav>
-<div class="logo">Rounak Edits</div>
-<div>@rounak_editzz</div>
-</nav>
+    <nav>
+        <div class="logo">ROUNAK EDITS</div>
+        <div class="nav-social">@rounak_editzz</div>
+    </nav>
 
-<section class="hero">
-<h1>Rounak Edits</h1>
-<p>Professional Video Editor • Reels • Commercial Ads • Documentary Style Editing • Motion Graphics</p>
-<a class="btn" href="#portfolio">View Portfolio</a>
-</section>
+    <section class="hero">
+        <h1>Rounak Edits</h1>
+        <p>Professional Video Editor • Reels • Commercial Ads • Documentary Style Editing • Motion Graphics</p>
+        <a class="btn" href="#portfolio">View Portfolio</a>
+    </section>
 
-<section class="section">
-<h2>About Me</h2>
-<div class="glass">
-<p>
-Hi, I'm Rounak. I help creators and brands turn raw footage into cinematic stories.
-Replace this text with your own introduction later.
-</p>
-</div>
-</section>
+    <section class="section">
+        <h2>About Me</h2>
+        <div class="glass">
+            <p>
+                Hi, I'm Rounak. I help creators and brands turn raw footage into cinematic stories. 
+                I specialize in high-retention editing, deep color grading, and dynamic visuals that leave a lasting impression. Let's create something extraordinary.
+            </p>
+        </div>
+    </section>
 
-<section class="section" id="portfolio">
-<h2>Portfolio Showcase</h2>
-<div class="grid">
+    <section class="section" id="portfolio">
+        <h2>Portfolio Showcase</h2>
+        <div class="grid">
+            
+            <!-- Video 1 -->
+            <div class="card">
+                <iframe width="100%" height="220" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+                <div class="card-content">
+                    <h3>Project Title 1</h3>
+                </div>
+            </div>
 
-<div class="card">
-<iframe width="100%" height="220"
-src="https://www.youtube.com/embed/VIDEO_ID_1"
-frameborder="0" allowfullscreen></iframe>
-<div class="card-content">
-<h3>Video 1</h3>
-</div>
-</div>
+            <!-- Video 2 -->
+            <div class="card">
+                <iframe width="100%" height="220" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+                <div class="card-content">
+                    <h3>Project Title 2</h3>
+                </div>
+            </div>
 
-<div class="card">
-<iframe width="100%" height="220"
-src="https://www.youtube.com/embed/VIDEO_ID_2"
-frameborder="0" allowfullscreen></iframe>
-<div class="card-content">
-<h3>Video 2</h3>
-</div>
-</div>
+            <!-- Video 3 -->
+            <div class="card">
+                <iframe width="100%" height="220" src="https://www.youtube.com/embed/VIDEO_ID_3" frameborder="0" allowfullscreen></iframe>
+                <div class="card-content">
+                    <h3>Project Title 3</h3>
+                </div>
+            </div>
 
-<div class="card">
-<iframe width="100%" height="220"
-src="https://www.youtube.com/embed/VIDEO_ID_3"
-frameborder="0" allowfullscreen></iframe>
-<div class="card-content">
-<h3>Video 3</h3>
-</div>
-</div>
+            <!-- Video 4 -->
+            <div class="card">
+                <iframe width="100%" height="220" src="https://www.youtube.com/embed/VIDEO_ID_4" frameborder="0" allowfullscreen></iframe>
+                <div class="card-content">
+                    <h3>Project Title 4</h3>
+                </div>
+            </div>
 
-<div class="card">
-<iframe width="100%" height="220"
-src="https://www.youtube.com/embed/VIDEO_ID_4"
-frameborder="0" allowfullscreen></iframe>
-<div class="card-content">
-<h3>Video 4</h3>
-</div>
-</div>
+            <!-- Video 5 -->
+            <div class="card">
+                <iframe width="100%" height="220" src="https://www.youtube.com/embed/VIDEO_ID_5" frameborder="0" allowfullscreen></iframe>
+                <div class="card-content">
+                    <h3>Project Title 5</h3>
+                </div>
+            </div>
 
-<div class="card">
-<iframe width="100%" height="220"
-src="https://www.youtube.com/embed/VIDEO_ID_5"
-frameborder="0" allowfullscreen></iframe>
-<div class="card-content">
-<h3>Video 5</h3>
-</div>
-</div>
+            <!-- Video 6 -->
+            <div class="card">
+                <iframe width="100%" height="220" src="https://www.youtube.com/embed/VIDEO_ID_6" frameborder="0" allowfullscreen></iframe>
+                <div class="card-content">
+                    <h3>Project Title 6</h3>
+                </div>
+            </div>
 
-<div class="card">
-<iframe width="100%" height="220"
-src="https://www.youtube.com/embed/VIDEO_ID_6"
-frameborder="0" allowfullscreen></iframe>
-<div class="card-content">
-<h3>Video 6</h3>
-</div>
-</div>
+            <!-- Video 7 -->
+            <div class="card">
+                <iframe width="100%" height="220" src="https://www.youtube.com/embed/VIDEO_ID_7" frameborder="0" allowfullscreen></iframe>
+                <div class="card-content">
+                    <h3>Project Title 7</h3>
+                </div>
+            </div>
 
-<div class="card">
-<iframe width="100%" height="220"
-src="https://www.youtube.com/embed/VIDEO_ID_7"
-frameborder="0" allowfullscreen></iframe>
-<div class="card-content">
-<h3>Video 7</h3>
-</div>
-</div>
+            <!-- Video 8 -->
+            <div class="card">
+                <iframe width="100%" height="220" src="https://www.youtube.com/embed/VIDEO_ID_8" frameborder="0" allowfullscreen></iframe>
+                <div class="card-content">
+                    <h3>Project Title 8</h3>
+                </div>
+            </div>
 
-<div class="card">
-<iframe width="100%" height="220"
-src="https://www.youtube.com/embed/VIDEO_ID_8"
-frameborder="0" allowfullscreen></iframe>
-<div class="card-content">
-<h3>Video 8</h3>
-</div>
-</div>
+            <!-- Video 9 -->
+            <div class="card">
+                <iframe width="100%" height="220" src="https://www.youtube.com/embed/VIDEO_ID_9" frameborder="0" allowfullscreen></iframe>
+                <div class="card-content">
+                    <h3>Project Title 9</h3>
+                </div>
+            </div>
 
-<div class="card">
-<iframe width="100%" height="220"
-src="https://www.youtube.com/embed/VIDEO_ID_9"
-frameborder="0" allowfullscreen></iframe>
-<div class="card-content">
-<h3>Video 9</h3>
-</div>
-</div>
+            <!-- Video 10 -->
+            <div class="card">
+                <iframe width="100%" height="220" src="https://www.youtube.com/embed/VIDEO_ID_10" frameborder="0" allowfullscreen></iframe>
+                <div class="card-content">
+                    <h3>Project Title 10</h3>
+                </div>
+            </div>
 
-<div class="card">
-<iframe width="100%" height="220"
-src="https://www.youtube.com/embed/VIDEO_ID_10"
-frameborder="0" allowfullscreen></iframe>
-<div class="card-content">
-<h3>Video 10</h3>
-</div>
-</div>
-<div class="card">
-<div class="thumb">VIDEO PLACEHOLDER 1</div>
-...
-</div>
+        </div>
+    </section>
 
-<div class="card">
-<div class="thumb">VIDEO PLACEHOLDER 2</div>
-...
-</div>
+    <!-- NEW: BANNERS FOR EMAIL AND INSTAGRAM -->
+    <section class="contact-section">
+        <!-- Update the mailto email address here -->
+        <a href="mailto:rounakeditzz@gmail.com" class="banner-btn" onclick="triggerSurprise(event, this)">
+            ✉️ EMAIL ME
+        </a>
+        
+        <!-- Update your Instagram link here -->
+        <a href="YOUR_INSTAGRAM_LINK_HERE" target="_blank" class="banner-btn" onclick="triggerSurprise(event, this)">
+            📸 INSTAGRAM
+        </a>
+    </section>
 
-<div class="card">
-<div class="thumb">VIDEO PLACEHOLDER 3</div>
-...
-</div>
+    <footer>
+        <p>© 2026 Rounak Edits. All Rights Reserved.</p>
+    </footer>
+
+    <!-- SURPRISE ANIMATION SCRIPT -->
+    <script>
+        function triggerSurprise(event, element) {
+            event.preventDefault(); // Pause the click
+            element.classList.remove('surprise-click'); // Reset animation
+            void element.offsetWidth; // Trigger reflow
+            element.classList.add('surprise-click'); // Start animation
+            
+            // Wait for the animation to play before jumping to the link
+            setTimeout(() => {
+                if (element.target === "_blank") {
+                    window.open(element.href, '_blank');
+                } else {
+                    window.location.href = element.href;
+                }
+            }, 700);
+        }
+    </script>
+</body>
+</html>
